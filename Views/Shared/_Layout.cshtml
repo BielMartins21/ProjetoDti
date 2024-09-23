@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html>
+<
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Sistema de Gestão de Alunos</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/ProjetoDti.styles.css" asp-append-version="true" />
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Sistema de Gestão de Alunos</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse"
+                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Alunos" asp-action="Index">Gerenciar Alunos</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            <h1>Gerenciamento de Alunos</h1>
+
+            <form>
+                <h3>Inserir Notas e Frequência</h3>
+                <div class="form-group">
+                    <label for="nomeAluno">Nome do Aluno</label>
+                    <input type="text" class="form-control" id="nomeAluno" placeholder="Nome do aluno">
+                </div>
+
+                <h4>Notas</h4>
+                <div class="form-group">
+                    <label for="disciplina1">Disciplina 1</label>
+                    <input type="number" class="form-control" id="disciplina1" placeholder="Nota (0-10)">
+                </div>
+                <div class="form-group">
+                    <label for="disciplina2">Disciplina 2</label>
+                    <input type="number" class="form-control" id="disciplina2" placeholder="Nota (0-10)">
+                </div>
+                <div class="form-group">
+                    <label for="disciplina3">Disciplina 3</label>
+                    <input type="number" class="form-control" id="disciplina3" placeholder="Nota (0-10)">
+                </div>
+                <div class="form-group">
+                    <label for="disciplina4">Disciplina 4</label>
+                    <input type="number" class="form-control" id="disciplina4" placeholder="Nota (0-10)">
+                </div>
+                <div class="form-group">
+                    <label for="disciplina5">Disciplina 5</label>
+                    <input type="number" class="form-control" id="disciplina5" placeholder="Nota (0-10)">
+                </div>
+
+                <h4>Frequência</h4>
+                <div class="form-group">
+                    <label for="frequencia">Frequência (%)</label>
+                    <input type="number" class="form-control" id="frequencia" placeholder="Frequência (0-100%)">
+                </div>
+
+                <button type="submit" class="btn btn-primary mt-3">Salvar Dados</button>
+            </form>
+
+            <h3 class="mt-5">Relatórios</h3>
+            <p>Após inserir os dados, você poderá visualizar os seguintes relatórios:</p>
+            <ul>
+                <li>Média de notas de cada aluno</li>
+                <li>Média da turma em cada disciplina</li>
+                <li>Frequência geral de cada aluno</li>
+                <li>Alunos com média de notas acima da média da turma</li>
+                <li>Alunos com frequência abaixo de 75%</li>
+            </ul>
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2024 - Sistema de Gestão de Alunos - <a asp-area="" asp-controller="Home" asp-action="Privacy">Política de Privacidade</a>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js" asp-append-version="true"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js" asp-append-version="true"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+
+</html>
